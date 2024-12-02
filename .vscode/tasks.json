@@ -1,0 +1,36 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+        {
+            "type": "npm",
+            "script": "build",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "label": "npm: build and watch",
+            "detail": "tsc && vite build --watch"
+        },
+        {
+            "type": "npm",
+            "script": "dev",
+            "problemMatcher": [],
+            "label": "npm: dev",
+            "detail": "vite dev"
+        },
+        {
+            "label": "Run Build Watch and Dev",
+            "dependsOn": [
+                "npm: build and watch",
+                "npm: dev"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOrder": "parallel"
+        }
+    ]
+}
